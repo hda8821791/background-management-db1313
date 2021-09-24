@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { GoodsController } from './goods.controller';
 import { MulterModule } from '@nestjs/platform-express';
-import { DbModule } from 'src/db/db.module';
 
 @Module({
   imports: [
@@ -12,7 +11,6 @@ import { DbModule } from 'src/db/db.module';
         dest: 'uploads',
       }),
     }),
-    DbModule,
   ],
   controllers: [GoodsController],
 })

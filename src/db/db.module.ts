@@ -1,11 +1,16 @@
 import { Global, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GoodsSchema } from './schemas/goods.schema';
+import { UserSchema } from './schemas/user.schema';
 
 const models = MongooseModule.forFeature([
   {
     name: 'GOODS_MODEL',
     schema: GoodsSchema,
+  },
+  {
+    name: 'USER_MODEL',
+    schema: UserSchema,
   },
 ]);
 

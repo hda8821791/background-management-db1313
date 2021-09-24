@@ -8,7 +8,6 @@ import {
 } from '@nestjs/common';
 import { AnyFilesInterceptor } from '@nestjs/platform-express';
 import { ApiTags } from '@nestjs/swagger';
-// import { ReturnModelType } from '@typegoose/typegoose';
 import { Crud } from 'nestjs-mongoose-crud';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -28,7 +27,7 @@ export class GoodsController {
   @UseInterceptors(AnyFilesInterceptor())
   uploadFile(@UploadedFiles() files: Array<Express.Multer.File>) {
     return {
-      url: `http://localhost:3009/uploads/${files[0].filename}`,
+      url: `http://localhost:5000/uploads/${files[0].filename}`,
     };
   }
 

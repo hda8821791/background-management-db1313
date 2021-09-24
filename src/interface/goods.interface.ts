@@ -2,7 +2,7 @@ import { Prop, Schema } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { Document } from 'mongoose';
 
-@Schema()
+@Schema({ timestamps: true })
 export class Goods extends Document {
   @ApiProperty({ description: '商品名稱' })
   @Prop()
