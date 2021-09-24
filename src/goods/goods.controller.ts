@@ -27,7 +27,7 @@ export class GoodsController {
   @UseInterceptors(AnyFilesInterceptor())
   uploadFile(@UploadedFiles() files: Array<Express.Multer.File>) {
     return {
-      url: `http://localhost:5000/uploads/${files[0].filename}`,
+      url: `https://background-management-db1313.herokuapp.com/uploads/${files[0].filename}`,
     };
   }
 
