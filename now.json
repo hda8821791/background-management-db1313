@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "nest-api-analyse-imports",
+  "name": "background-management-db1313",
   "builds": [
     {
       "src": "dist/main.js",
