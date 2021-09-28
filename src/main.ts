@@ -1,9 +1,7 @@
 import { NestFactory } from '@nestjs/core';
-// import { NestExpressApplication } from '@nestjs/platform-express';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { NestFastifyApplication } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import express from 'express';
-import { join } from 'path';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
