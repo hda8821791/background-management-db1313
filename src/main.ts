@@ -25,9 +25,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
 
-  const PORP = parseInt(process.env.PORT) || 5000;
+  const PORP = parseInt(process.env.PORT) || 3000;
 
-  await app.listen(PORP, '0.0.0.0');
+  await app.listen(PORP);
   console.log(`http://localhost:${PORP}/api-docs`);
 }
 bootstrap();
