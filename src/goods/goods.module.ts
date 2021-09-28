@@ -8,7 +8,7 @@ import { MulterModule } from '@nestjs/platform-express';
     MulterModule.registerAsync({
       useFactory: () => ({
         //? 存取位置
-        dest: 'uploads',
+        dest: './uploads',
       }),
     }),
   ],

@@ -1,16 +1,18 @@
 import { Goods } from '../interface/goods.interface';
-import { Get } from '@nestjs/common';
+import { Get, UploadedFile } from '@nestjs/common';
 import {
   Controller,
   Post,
   UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
-import { AnyFilesInterceptor } from '@nestjs/platform-express';
+import { AnyFilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
 import { ApiTags } from '@nestjs/swagger';
 import { Crud } from 'nestjs-mongoose-crud';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+
+import { Express } from 'express';
 
 @Crud({
   model: Goods,
@@ -27,9 +29,16 @@ export class GoodsController {
   @UseInterceptors(AnyFilesInterceptor())
   uploadFile(@UploadedFiles() files: Array<Express.Multer.File>) {
     return {
-      url: `https://background-management-db1313.herokuapp.com/uploads/${files[0].filename}`,
+      url: `http://localhost:5000/uploads/${files[0].filename}`,
+      // url: `https://background-management-db1313.herokuapp.com/uploads/${files[0].filename}`,
     };
   }
+
+  // @Post('upload')
+  // @UseInterceptors(FileInterceptor('file'))
+  // uploadFile(@UploadedFile() file: Express.Multer.File) {
+  //   console.log(file);
+  // }
 
   @Get('menu')
   getMenu() {

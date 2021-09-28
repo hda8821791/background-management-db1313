@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "nest-api-analyse-imports",
+  "builds": [
+    {
+      "src": "dist/main.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    },
+    { "handle": "filesystem" },
+    {
+      "src": "/(.*)",
+      "dest": "/.vercel/functions/renderer"
+    }
+  ]
+}
