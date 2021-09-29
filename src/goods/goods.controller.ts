@@ -46,6 +46,7 @@ export class GoodsController {
       menu: [
         {
           title: '商品管理',
+          icon: 'el-icon-goods',
           children: [
             {
               path: '/goods/goods-list',
@@ -59,6 +60,7 @@ export class GoodsController {
         },
         {
           title: '用戶管理',
+          icon: 'el-icon-user',
           children: [
             {
               path: '/user/user-list',
